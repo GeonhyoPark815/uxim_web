@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# UXIM Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React.js / TypeScript
 
-## Available Scripts
+## How to run
 
-In the project directory, you can run:
+### env 설정
 
-### `npm start`
+to be continued
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### App 실행
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- local, dev
 
-### `npm test`
+```shell
+npm run
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- production
+  to be continued
 
-### `npm run build`
+## Basic rules
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### package install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm` 을 사용하여 install 하기 때문에 `yarn` 을 사용하는것을 **금지**한다
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**typescript** 관련 패키지는 npm `install --save-dev`를 통해 설치한다.
 
-### `npm run eject`
+## Code Convention
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Dir 구조
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```text
+- src
+|- assets
+|- components
+|  # 도메인이나 역할 분류에 따라 디렉토리 생성
+|  # 디렉토리는 camelCase, 컴포넌트는 PascalCase 로 표기
+|  # 컴포넌트명은 도메인명을 항상 포함한다
+|- constants
+|  # 공통 readonly 상수
+|  # 상수명은 SCREAM_SNAKE_CASE 로 표기
+|- pages
+|  # route 구조에 따라 생성
+|  # 하위 컴포넌트 이름은 Page라는 접미어를 붙인다
+|- utils
+|  # 각종 유틸 로직 (mappers, types 등등)'
+|- styles
+|  # style 관련된 내용(컴포넌트, 함수 포함)
+|- App.tsx
+|  # App.tsx는 Context provider로서만 사용하도록 한다. 로직이 되는 코드는 작성하지 않는다.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 컴포넌트 내부 Wrapper 사용규칙
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Container
 
-## Learn More
+    - 컴포넌트 내부에서 Wrapper를 사용한다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```tsx
+  // Bad Case
+  function BadCase(): JSX.Element {
+    return (
+      <div>
+        <Wrapper></Wrapper>
+      </div>
+    );
+  }
+  // Good Case
+  function GoodCase(): JSX.Element {
+    return (
+      <Wrapper>
+        <SomeOtherWrapper></SomeOtherWrapper>
+      </Wrapper>
+    );
+  }
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ### size 단위 규칙
+
+    - 모든 size 단위는 rem만 사용한다.
+      root(`GlobalStyle.ts`)에 `font-size: 10px`을 지정하여, 소수점 한자리를 당겨서 사용한다.
+      가령, `width: 24px` 인 경우 다음과 같이 사용한다.
+
+  ```css
+  .circle {
+    width: 2.4rem;
+  }
+  ```
