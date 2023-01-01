@@ -9,6 +9,7 @@
 	"rules": {
         "import/extensions": 0, // ts 파일을 불러오기 위해
 		"import/no-unresolved": "off",
+		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
 		"react/function-component-definition":[2, {"namedcomponents":"arrow-function"}],
 		"react/jsx-filename-extension": 0 // ts, tsx 파일에서도 jsx를 쓰기 위해
 		//    "indent": [
