@@ -1,8 +1,9 @@
 const palette = {
+	UXIM_RED: '#D3623A',
+	UXIM_EMERALD: '#6CB9B7',
+	UXIM_PURPLE: '#625DA2',
+
 	WHITE: '#FFFFFF',
-	RED: '#D3623A',
-	EMERALD: '#6CB9B7',
-	PURPLE: '#625DA2',
 	GREY: '#7D7D7D',
 	BLACK: '#000000',
 };
