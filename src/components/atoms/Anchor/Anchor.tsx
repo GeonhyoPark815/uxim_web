@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 interface Props {
 	children: React.ReactNode;
-	href: string;
+	url: string;
 	defaultColor: string;
 	activeColor: string;
 	isActive: boolean;
@@ -12,8 +13,7 @@ interface Props {
 	activeBorderWidth: number;
 }
 
-const StyledAnchor = styled.a<Props>`
-	text-decoration: none;
+const StyledAnchor = styled.div<Props>`
 	display: inline-flex;
 	box-sizing: border-box;
 	text-align: center;
@@ -31,7 +31,7 @@ const StyledAnchor = styled.a<Props>`
 
 export default function Anchor({
 	children,
-	href,
+	url,
 	isActive,
 	defaultColor,
 	activeColor,
@@ -40,16 +40,18 @@ export default function Anchor({
 	activeBorderWidth,
 }: Props) {
 	return (
-		<StyledAnchor
-			href={href}
-			isActive={isActive}
-			defaultColor={defaultColor}
-			activeColor={activeColor}
-			verticalPadding={verticalPadding}
-			horizontalPadding={horizontalPadding}
-			activeBorderWidth={activeBorderWidth}
-		>
-			{children}
-		</StyledAnchor>
+		<Link to={url} style={{textDecoration: "none"}}>
+			<StyledAnchor
+				isActive={isActive}
+				defaultColor={defaultColor}
+				activeColor={activeColor}
+				verticalPadding={verticalPadding}
+				horizontalPadding={horizontalPadding}
+				activeBorderWidth={activeBorderWidth}
+				url={url}
+			>
+				{children}
+			</StyledAnchor>
+		</Link>
 	);
 }

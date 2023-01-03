@@ -9,26 +9,11 @@ export default {
 	component: Anchor,
 } as ComponentMeta<typeof Anchor>;
 
-export function Default() {
-	return (
-		<Anchor
-			href="https://www.google.com"
-			isActive={false}
-			activeColor={theme.palette.UXIM_EMERALD}
-			defaultColor={theme.palette.BLACK}
-			activeBorderWidth={0.3}
-			horizontalPadding={1}
-			verticalPadding={1}
-		>
-			<Span className='default' type={theme.font.HEADLINE} value='Default'/>
-		</Anchor>
-	);
-}
 
 export function Active() {
 	return (
 		<Anchor
-			href="https://www.google.com"
+			url="/"
 			isActive
 			activeColor={theme.palette.UXIM_EMERALD}
 			defaultColor={theme.palette.BLACK}
@@ -37,6 +22,23 @@ export function Active() {
 			verticalPadding={1}
 		>
 			<Span className='active' type={FontType.HEADLINE} value='Active'/>
+		</Anchor>
+	);
+}
+
+
+export function Default() {
+	return (
+		<Anchor
+			url="/"
+			isActive={false}
+			activeColor={theme.palette.UXIM_EMERALD}
+			defaultColor={theme.palette.BLACK}
+			activeBorderWidth={0.3}
+			horizontalPadding={1}
+			verticalPadding={1}
+		>
+			<Span className='default' type={theme.font.HEADLINE} value='Default'/>
 		</Anchor>
 	);
 }
