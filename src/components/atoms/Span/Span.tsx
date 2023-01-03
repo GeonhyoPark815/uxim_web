@@ -3,59 +3,47 @@ import styled from 'styled-components'
 import FontStyles from "../../../styles/FontStyles";
 
 const LargeTitle = styled.span`
-	font-size: 3.4rem;
-	line-height: 4.1rem;
+	${FontStyles.LARGE_TITLE}
 `;
 
 const Title1 = styled.span`
-	font-size: 2.8rem;
-	line-height: 3.4rem;
+	${FontStyles.TITLE1}
 `;
 
 const Title2 = styled.span`
-	font-size: 2.2rem;
-	line-height: 2.8rem;
+	${FontStyles.TITLE2}
 `;
 
 const Title3 = styled.span`
-	font-size: 2rem;
-	line-height: 2.5rem;
+	${FontStyles.TITLE3}
 `;
 
 const Headline = styled.span`
-	font-weight: 600;
-	font-size: 1.7rem;
-	line-height: 2.2rem;
+	${FontStyles.HEADLINE}
 `;
 
 const Body = styled.span`
-	font-size: 1.7rem;
-	line-height: 2.2rem;
+	${FontStyles.BODY}
 `;
 
 const Callout = styled.span`
-	font-size: 1.6rem;
-	line-height: 2.1rem;
+	${FontStyles.CALLOUT}
 `;
 
 const Subhead = styled.span`
-	font-size: 1.5rem;
-	line-height: 2.0rem;
+	${FontStyles.SUBHEAD}
 `;
 
 const Footnote = styled.span`
-	font-size: 1.3rem;
-	line-height: 1.8rem;
+	${FontStyles.FOOTNOTE}
 `;
 
 const Caption1 = styled.span`
-	font-size: 1.2rem;
-	line-height: 1.6rem;
+	${FontStyles.CAPTION1}
 `;
 
 const Caption2 = styled.span`
-	font-size: 1.1rem;
-	line-height: 1.3rem;
+	${FontStyles.CAPTION2}
 `;
 
 interface props {
@@ -64,20 +52,34 @@ interface props {
 	value:string;
 }
 
-export default function Span({ className, type = FontStyles.BODY, value }:props) {
+export const FontType = {
+	LARGE_TITLE:'large_title',
+	TITLE1:'title1',
+	TITLE2:'title2',
+	TITLE3:'title3',
+	HEADLINE:'headline',
+	BODY:'body',
+	CALLOUT:'callout',
+	SUBHEAD:'subhead',
+	FOOTNOTE:'footnote',
+	CAPTION1:'caption1',
+	CAPTION2:'caption2',
+}
+
+export default function Span({ className, type = FontType.BODY, value }:props) {
 	return(
 		<>
-			{ type === FontStyles.LARGE_TITLE && <LargeTitle className={className}>{value}</LargeTitle> }
-			{ type === FontStyles.TITLE1 && <Title1 className={className}>{value}</Title1> }
-			{ type === FontStyles.TITLE2 && <Title2 className={className}>{value}</Title2> }
-			{ type === FontStyles.TITLE3 && <Title3 className={className}>{value}</Title3> }
-			{ type === FontStyles.HEADLINE && <Headline className={className}>{value}</Headline> }
-			{ type === FontStyles.BODY && <Body className={className}>{value}</Body> }
-			{ type === FontStyles.CALLOUT && <Callout className={className}>{value}</Callout> }
-			{ type === FontStyles.SUBHEAD && <Subhead className={className}>{value}</Subhead> }
-			{ type === FontStyles.FOOTNOTE && <Footnote className={className}>{value}</Footnote> }
-			{ type === FontStyles.CAPTION1 && <Caption1 className={className}>{value}</Caption1> }
-			{ type === FontStyles.CAPTION2 && <Caption2 className={className}>{value}</Caption2> }
+			{ type === FontType.LARGE_TITLE && <LargeTitle className={className}>{value}</LargeTitle> }
+			{ type === FontType.TITLE1 && <Title1 className={className}>{value}</Title1> }
+			{ type === FontType.TITLE2 && <Title2 className={className}>{value}</Title2> }
+			{ type === FontType.TITLE3 && <Title3 className={className}>{value}</Title3> }
+			{ type === FontType.HEADLINE && <Headline className={className}>{value}</Headline> }
+			{ type === FontType.BODY && <Body className={className}>{value}</Body> }
+			{ type === FontType.CALLOUT && <Callout className={className}>{value}</Callout> }
+			{ type === FontType.SUBHEAD && <Subhead className={className}>{value}</Subhead> }
+			{ type === FontType.FOOTNOTE && <Footnote className={className}>{value}</Footnote> }
+			{ type === FontType.CAPTION1 && <Caption1 className={className}>{value}</Caption1> }
+			{ type === FontType.CAPTION2 && <Caption2 className={className}>{value}</Caption2> }
 		</>
 	);
 }

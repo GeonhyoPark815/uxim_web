@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentMeta } from '@storybook/react';
-import Span from "./Span";
-import FontStyles from "../../../styles/FontStyles";
+import Span, {FontType} from "./Span";
 
 export default {
 	title: 'Atoms/Span',
@@ -11,45 +10,45 @@ export default {
 const testValue:string = '1234567890 가나다라마바사 ABCDEFabcdef';
 
 export function LargeTitle() {
-	return <Span className='large-title' type={FontStyles.LARGE_TITLE} value={testValue}/>;
+	return <Span className='large-title' type={FontType.LARGE_TITLE} value={testValue}/>;
 }
 
 export function Title1() {
-	return <Span className='title1' type={FontStyles.TITLE1} value={testValue}/>;
+	return <Span className='title1' type={FontType.TITLE1} value={testValue}/>;
 }
 
 export function Title2() {
-	return <Span className='title2' type={FontStyles.TITLE2} value={testValue}/>;
+	return <Span className='title2' type={FontType.TITLE2} value={testValue}/>;
 }
 
 export function Title3() {
-	return <Span className='title3' type={FontStyles.TITLE3} value={testValue}/>;
+	return <Span className='title3' type={FontType.TITLE3} value={testValue}/>;
 }
 
 export function Headline() {
-	return <Span className='headline' type={FontStyles.HEADLINE} value={testValue}/>;
+	return <Span className='headline' type={FontType.HEADLINE} value={testValue}/>;
 }
 
 export function Body() {
-	return <Span className='body' type={FontStyles.BODY} value={testValue}/>;
+	return <Span className='body' type={FontType.BODY} value={testValue}/>;
 }
 
 export function Callout() {
-	return <Span className='callout' type={FontStyles.CALLOUT} value={testValue}/>;
+	return <Span className='callout' type={FontType.CALLOUT} value={testValue}/>;
 }
 
 export function Subhead() {
-	return <Span className='subhead' type={FontStyles.SUBHEAD} value={testValue}/>;
+	return <Span className='subhead' type={FontType.SUBHEAD} value={testValue}/>;
 }
 
 export function Footnote() {
-	return <Span className='footnote' type={FontStyles.FOOTNOTE} value={testValue}/>;
+	return <Span className='footnote' type={FontType.FOOTNOTE} value={testValue}/>;
 }
 
 export function Caption1() {
-	return <Span className='caption1' type={FontStyles.CAPTION1} value={testValue}/>;
+	return <Span className='caption1' type={FontType.CAPTION1} value={testValue}/>;
 }
 
 export function Caption2() {
-	return <Span className='caption2' type={FontStyles.CAPTION2} value={testValue}/>;
+	return <Span className='caption2' type={FontType.CAPTION2} value={testValue}/>;
 }
