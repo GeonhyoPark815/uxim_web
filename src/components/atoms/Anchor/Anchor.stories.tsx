@@ -20,7 +20,7 @@ export function Default() {
 			horizontalPadding={1}
 			verticalPadding={1}
 		>
-			<Span className='default' type={FontType.HEADLINE} value='Default'/>
+			<Span className='default' type={theme.font.HEADLINE} value='Default'/>
 		</Anchor>
 	);
 }

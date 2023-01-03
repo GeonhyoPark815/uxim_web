@@ -1,49 +1,49 @@
 import React  from "react";
 import styled from 'styled-components'
-import FontStyles from "../../../styles/FontStyles";
+import theme from "../../../styles/theme";
 
 const LargeTitle = styled.span`
-	${FontStyles.LARGE_TITLE}
+	${theme.font.LARGE_TITLE}
 `;
 
 const Title1 = styled.span`
-	${FontStyles.TITLE1}
+	${theme.font.TITLE1}
 `;
 
 const Title2 = styled.span`
-	${FontStyles.TITLE2}
+	${theme.font.TITLE2}
 `;
 
 const Title3 = styled.span`
-	${FontStyles.TITLE3}
+	${theme.font.TITLE3}
 `;
 
 const Headline = styled.span`
-	${FontStyles.HEADLINE}
+	${theme.font.HEADLINE}
 `;
 
 const Body = styled.span`
-	${FontStyles.BODY}
+	${theme.font.BODY}
 `;
 
 const Callout = styled.span`
-	${FontStyles.CALLOUT}
+	${theme.font.CALLOUT}
 `;
 
 const Subhead = styled.span`
-	${FontStyles.SUBHEAD}
+	${theme.font.SUBHEAD}
 `;
 
 const Footnote = styled.span`
-	${FontStyles.FOOTNOTE}
+	${theme.font.FOOTNOTE}
 `;
 
 const Caption1 = styled.span`
-	${FontStyles.CAPTION1}
+	${theme.font.CAPTION1}
 `;
 
 const Caption2 = styled.span`
-	${FontStyles.CAPTION2}
+	${theme.font.CAPTION2}
 `;
 
 interface props {
